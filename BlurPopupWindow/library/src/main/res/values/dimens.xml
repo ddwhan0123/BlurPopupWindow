@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pop_margin_left_or_right">32dp</dimen>
+</resources>

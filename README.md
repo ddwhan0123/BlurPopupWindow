@@ -9,6 +9,8 @@
 ![](https://github.com/ddwhan0123/BlurPopupWindow/blob/master/BlurPopupWindow/Screen/bottom.png?raw=true)  
 <br>
 ![](https://github.com/ddwhan0123/BlurPopupWindow/blob/master/BlurPopupWindow/Screen/center.png?raw=true)  
+<br>
+公共Maven会在完成下次更新后补上<br>
 
 
 如何使用?  <br>

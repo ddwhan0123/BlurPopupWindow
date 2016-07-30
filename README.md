@@ -1,6 +1,14 @@
-# BlurPopupWindow/高级模糊Pop弹窗
+# BlurPopupWindow/高级模糊Pop弹窗<br>
 
+###作者：王亟亟
 
+###blog:http://blog.csdn.net/ddwhan0123
+
+<br>
+#### 效果图
+![](https://github.com/ddwhan0123/BlurPopupWindow/blob/master/BlurPopupWindow/Screen/bottom.png?raw=true)  
+<br>
+![](https://github.com/ddwhan0123/BlurPopupWindow/blob/master/BlurPopupWindow/Screen/center.png?raw=true)  
 
 
 如何使用?  <br>
@@ -17,7 +25,27 @@
                                 blurPopWin.dismiss();
                             }
                         }).show(btn);
-在需要显示pop的地方直接new 一个实例出来然后简单的走一下各类set最后.show就行，灰常的简单
+在需要显示pop的地方直接new 一个实例出来然后简单的走一下各类set最后.show就行，灰常的简单<br>
+
+v1.0 可配置的方法<br>
+
+设置标题 setTitle(@StringRes int titleRes);<br>
+
+设置图片处理锐化程度 setRadius(int radius);<br>
+
+设置标题字体大小 setTitleTextSize(int size);<br>
+
+设置内容文字 setContent(@StringRes int contentRes;<br>
+
+设置内容字体大小 setContentTextSize(int size);<br>
+
+设置pop位置 setshowAtLocationType(int type);<br>//0为居中，1为底部
+
+
+
+--------------------------
+
+我周中应该还会很忙，找时间继续深化功能吧。谢谢各位观众老爷
 
 
 

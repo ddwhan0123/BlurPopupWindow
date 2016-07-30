@@ -3,7 +3,7 @@
 
 
 
-如何使用?  How to use?<br>
+如何使用?  <br>
 
     new BlurPopWin.Builder(MainActivity.this).setContent("该配合你演出的我,眼视而不见,在比一个最爱你的人即兴表演")
                         //Radius越大耗时越长,被图片处理图像越模糊
@@ -17,6 +17,8 @@
                                 blurPopWin.dismiss();
                             }
                         }).show(btn);
+在需要显示pop的地方直接new 一个实例出来然后简单的走一下各类set最后.show就行，灰常的简单
+
 
 
 

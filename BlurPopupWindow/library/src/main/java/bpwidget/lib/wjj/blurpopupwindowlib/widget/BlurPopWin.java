@@ -16,6 +16,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ public class BlurPopWin {
     private CardView pop_layout;
     private TextView title;
     private TextView content;
+    private ImageView close;
     private Builder builder;
     private PopupWindow popupWindow;
     private int radius;
@@ -102,6 +104,7 @@ public class BlurPopWin {
             pop_root_layout = (RelativeLayout) rootView.findViewById(R.id.pop_root_layout);
             title = (TextView) rootView.findViewById(R.id.title);
             content = (TextView) rootView.findViewById(R.id.content);
+            close = (ImageView) rootView.findViewById(R.id.close);
 
             if (builder.title != null) {
                 title.setText(builder.title);
@@ -123,6 +126,19 @@ public class BlurPopWin {
 
             if (builder.contentTextSize != 0) {
                 content.setTextSize(builder.contentTextSize);
+            }
+
+            if (builder.isShowClose) {
+                close.setVisibility(View.VISIBLE);
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        popupWindow.dismiss();
+                    }
+                });
+            } else {
+                close.setClickable(false);
+                close.setVisibility(View.INVISIBLE);
             }
 
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -149,16 +165,18 @@ public class BlurPopWin {
                         case MotionEvent.ACTION_MOVE:
                             break;
                         case MotionEvent.ACTION_UP:
-                            if (builder.showAtLocationType.equals(GRAVITY_CENTER)) {
-                                if (touchY < pop_layout.getTop() || touchY > pop_layout.getBottom()) {
-                                    popupWindow.dismiss();
-                                }
-                            } else if (builder.showAtLocationType.equals(GRAVITY_BOTTOM)) {
-                                if (touchY < pop_layout.getTop()) {
-                                    popupWindow.dismiss();
+
+                            if(builder.isBackgroundClose){
+                                if (builder.showAtLocationType.equals(GRAVITY_CENTER)) {
+                                    if (touchY < pop_layout.getTop() || touchY > pop_layout.getBottom()) {
+                                        popupWindow.dismiss();
+                                    }
+                                } else if (builder.showAtLocationType.equals(GRAVITY_BOTTOM)) {
+                                    if (touchY < pop_layout.getTop()) {
+                                        popupWindow.dismiss();
+                                    }
                                 }
                             }
-
                             break;
                         default:
                             break;
@@ -182,7 +200,6 @@ public class BlurPopWin {
 
     public static class Builder {
 
-
         protected BlurPopWin blurPopWin;
         protected int titleTextSize, contentTextSize;
         protected Activity activity;
@@ -191,6 +208,9 @@ public class BlurPopWin {
         protected int radius;
         protected String title, content;
         protected boolean isCancelable;
+        //默认不显示XX
+        protected boolean isShowClose = false;
+        protected boolean isBackgroundClose = true;
         protected String showAtLocationType = GRAVITY_CENTER;
 
         public Builder(@NonNull Context context) {
@@ -259,6 +279,16 @@ public class BlurPopWin {
                 this.showAtLocationType = GRAVITY_BOTTOM;
             }
 
+            return this;
+        }
+
+        public Builder setShowCloseButton(@NonNull boolean flag) {
+            this.isShowClose = flag;
+            return this;
+        }
+
+        public Builder setOutSideClickable(@NonNull boolean flag) {
+            this.isBackgroundClose = flag;
             return this;
         }
 

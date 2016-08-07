@@ -24,13 +24,15 @@ public class MainActivity extends AppCompatActivity {
                         .setRadius(3).setTitle("我是标题")
                         //设置居中还是底部显示
                         .setshowAtLocationType(0)
-                        .onClick(new BlurPopWin.PopupCallback() {
+                        .setShowCloseButton(true)
+                        .setOutSideClickable(false)
+                        /*.onClick(new BlurPopWin.PopupCallback() {
                             @Override
                             public void onClick(@NonNull BlurPopWin blurPopWin) {
                                 Toast.makeText(MainActivity.this, "中间被点了", Toast.LENGTH_SHORT).show();
                                 blurPopWin.dismiss();
                             }
-                        }).show(btn);
+                        })*/.show(btn);
             }
         });
     }

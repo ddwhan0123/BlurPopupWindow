@@ -6,9 +6,9 @@
 
 <br>
 #### 效果图
-![](https://github.com/ddwhan0123/BlurPopupWindow/blob/master/BlurPopupWindow/Screen/bottom.png?raw=true)  
+![](http://img.blog.csdn.net/20160730214925858)  
 <br>
-![](https://github.com/ddwhan0123/BlurPopupWindow/blob/master/BlurPopupWindow/Screen/center.png?raw=true)  
+![](http://img.blog.csdn.net/20160730214936983)  
 <br>
 公共Maven会在完成下次更新后补上<br>
 

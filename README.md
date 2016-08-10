@@ -43,7 +43,9 @@ v1.0 可配置的方法<br>
 
 设置pop位置 setshowAtLocationType(int type);<br>//0为居中，1为底部
 
+设置是否显示关闭按钮 setShowCloseButton(@NonNull boolean flag)
 
+设置外部是否可点击 setOutSideClickable(@NonNull boolean flag)
 
 --------------------------
 

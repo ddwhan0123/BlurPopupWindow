@@ -1,8 +1,8 @@
 # BlurPopupWindow/高级模糊Pop弹窗<br>
 
-###作者：王亟亟
+### 作者：王亟亟
 
-###blog:http://blog.csdn.net/ddwhan0123
+### blog:http://blog.csdn.net/ddwhan0123
 
 <br>
 #### 效果图
@@ -49,7 +49,7 @@ v1.0 可配置的方法<br>
 
 --------------------------
 
-我周中应该还会很忙，找时间继续深化功能吧。谢谢各位观众老爷
+谢谢各位观众老爷
 
 
 
